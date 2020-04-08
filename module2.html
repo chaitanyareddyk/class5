@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <title>JS Module 2</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <h2>Arrays in Javascript</h2>
+        <p id='firstName'>
+            User name:
+        </p>
+
+        <p>Input Array:
+            <span id="inputDisplay"></span>
+        </p>
+
+        <p>Output Array:
+            <span id="outputDisplay"></span>
+        </p>
+
+        <button onclick="multiplyFun(10)">Multiply by 10</button>
+        <button onclick="multiplyFun(5)">Multiply by 5</button>
+
+        <script>
+        var array1=[2,8,26,54];
+        var array2;
+
+        var user = { 
+
+            "postOwner": {
+
+                "firstName": "Chaitanya",
+                "lastName": "Reddy",
+                "age": 20,
+                "isIndian": true
+
+            },
+
+            "likedUser" : {
+                "firstName": "John T",
+                "lastName": "Doe",
+                "age": 30,
+                "isIndian": false,
+                "cars" : ["bmw", "audi", "merc"]
+            }
+
+           
+        }
+
+        document.write(user.likedUser['firstName'])
+
+        var carsArray = user.likedUser.cars;
+
+        carsArray.map(eachCar => {
+            document.getElementById('firstName').innerHTML += eachCar + "<br />"
+        })
+
+
+
+
+        document.getElementById('inputDisplay').innerHTML = array1;
+
+        array2 = array1.map(param1 =>  param1 * 10)
+
+        document.getElementById('outputDisplay').innerHTML = array2;
+
+        function multiplyFun(mulNum){
+            array2 = array2.map(param1 => param1 * mulNum)
+            document.getElementById('outputDisplay').innerHTML = array2;
+        }
+
+    </script>
+    </body>
+</html>
